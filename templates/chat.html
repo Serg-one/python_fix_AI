@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Chatbot</title>
+    <style>
+      /* Add your custom CSS styles here */
+    </style>
+  </head>
+  <body>
+    <h1>Chatbot</h1>
+    <div class="chat-container">
+      {% if message %}
+        <div class="user-message">{{ message }}</div>
+      {% endif %}
+      {% if bot_message %}
+        <div class="bot-message">{{ bot_message }}</div>
+      {% endif %}
+    </div>
+    <form method="post" action="/chat">
+      <input type="text" name="message" placeholder="Type your message here" />
+      <button type="submit">Send</button>
+    </form>
+  </body>
+</html>
+

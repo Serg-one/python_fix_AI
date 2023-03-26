@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Fix and Debug Python Code</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}" />
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.2.0/styles/default.min.css">
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.2.0/highlight.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>   
+  </head>  
+  <body>
+    <div class="container">
+      <h1>Fix and Debug Python Code</h1>
+      <form method="post" action="/fix-debug">
+        <label
+          >Enter your Python code below and click the "Fix and Debug" button
+          to see the result:</label
+        >
+        <textarea name="code"></textarea>
+        <button type="submit">Fix and Debug</button>
+      </form>
+      {% if fixed_code %}
+        <h2>Fixed and Debugged Code:</h2>
+        <div class="highlight">
+          {{ fixed_code|safe }}
+        </div>
+      {% endif %}
+    </div>
+  </body>
+</html>
+
+

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Fix and Debug Python Code</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}" />
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.2.0/styles/default.min.css">
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.2.0/highlight.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>   
+  </head>  
+  <body>
+    <div class="container">
+        <div class="row">
+            <div class="view">
+                <h2>Source Code:</h2>
+                <div class="highlight">
+                    {{ input_code|safe }}
+                </div>
+            </div>
+            {% if fixed_code %}
+            <div class="view">
+                <h2>Fixed and Debugged Code:</h2>
+                <div class="highlight">
+                    {{ fixed_code|safe }}
+                </div>
+            </div>
+        </div>
+        {% endif %}
+    </div>
+  </body>
+</html>
